@@ -17,6 +17,7 @@ public class Tests
     [Test]
     public Task Basic()
     {
+        // Arrange
         var address = new Address(
             City: "new york",
             AddressId: Guid.Parse("11111111-1111-1111-1111-111111111111"),
@@ -31,14 +32,17 @@ public class Tests
             LastUpdated: new DateTime(2023, 1, 1, 9, 0, 0, DateTimeKind.Utc)
         );
 
+        // Act
         var output = _processor.ValidatePerson(person);
 
+        // Assert
         return Verify(output);
     }
 
     [Test]
     public Task ExplicitScrubbing()
     {
+        // Arrange
         var address = new Address(
             City: "los angeles",
             AddressId: Guid.Parse("33333333-3333-3333-3333-333333333333"),
@@ -53,8 +57,10 @@ public class Tests
             LastUpdated: new DateTime(2023, 2, 1, 11, 30, 0, DateTimeKind.Utc)
         );
 
+        // Act
         var output = _processor.ValidatePerson(person);
 
+        // Assert
         return Verify(output)
             .ScrubMember<ValidationResult>(x => x.Status);
     }
@@ -65,6 +71,7 @@ public class Tests
     [Test]
     public Task TestThatIncludesInput()
     {
+        // Arrange
         var inputPersonId = Guid.Parse("aaaaaaaa-aaaa-aaaa-aaaa-aaaaaaaaaaaa");
         var inputAddressId = Guid.Parse("bbbbbbbb-bbbb-bbbb-bbbb-bbbbbbbbbbbb");
         
@@ -82,8 +89,13 @@ public class Tests
             LastUpdated: new DateTime(2023, 3, 1, 8, 15, 0, DateTimeKind.Utc)
         );
 
+        // Act
         var output = _processor.ValidatePerson(input);
 
+        // Assert
+
+        // This assert is superflous because of how the PersonId
+        // in input and output is scrubbed!
         Assert.That(output.PersonId, Is.EqualTo(inputPersonId), 
             "Person ID should be preserved from input to output");
 

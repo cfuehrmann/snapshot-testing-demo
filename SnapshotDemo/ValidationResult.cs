@@ -5,7 +5,7 @@ public record ValidationResult(
     bool IsValid,
     string Status,
     List<string> Warnings,
-    ValidationMetadata Metadata
+    ValidationMetadata Metadata // nested data, relevant for snapshot demo!
 );
 
 public record ValidationMetadata(
