@@ -67,4 +67,4 @@ The first time you run a new test, Verify creates `.received.txt` files. Review 
 ## Learning Resources
 
 - [Verify Documentation](https://github.com/VerifyTests/Verify)
-- [Snapshot Testing Guide](https://github.com/VerifyTests/Verify/blob/main/docs/snapshot-testing.md)
+- [Verify Getting Started Wizard](https://github.com/VerifyTests/Verify#getting-started-wizard)
