@@ -65,8 +65,11 @@ public class Tests
             .ScrubMember<ValidationResult>(x => x.Status);
     }
 
+    // By including input in the verification, we can
+    // 1. Make the snapshot more readable
+    // 2. Assert equalities between input and output properties. (Here `PersonId`)
     [Test]
-    public Task VerifyGuidPreservation()
+    public Task TestThatIncludesInput()
     {
         var inputPersonId = Guid.Parse("aaaaaaaa-aaaa-aaaa-aaaa-aaaaaaaaaaaa");
         var inputAddressId = Guid.Parse("bbbbbbbb-bbbb-bbbb-bbbb-bbbbbbbbbbbb");
@@ -94,32 +97,5 @@ public class Tests
             "Person ID should be preserved from input to output");
 
         return Verify(new { input, output });
-    }
-
-    [Test]
-    public Task WithCustomScrubbing()
-    {
-        var address = new Address(
-            Street: "321 Pine Road",
-            City: "Seattle",
-            PostalCode: "98101",
-            AddressId: Guid.Parse("cccccccc-cccc-cccc-cccc-cccccccccccc"),
-            CreatedAt: new DateTime(2023, 4, 5, 12, 0, 0, DateTimeKind.Utc)
-        );
-
-        var input = new Person(
-            FirstName: "Bob",
-            LastName: "Wilson",
-            Address: address,
-            PersonId: Guid.Parse("dddddddd-dddd-dddd-dddd-dddddddddddd"),
-            DateOfBirth: new DateTime(1988, 7, 18),
-            LastUpdated: new DateTime(2023, 4, 1, 10, 45, 0, DateTimeKind.Utc)
-        );
-
-        var output = _processor.ValidatePerson(input);
-
-        return Verify(new { input, output })
-            .ScrubMember<Person>(x => x.LastUpdated)
-            .ScrubMember<Address>(x => x.CreatedAt);
     }
 }
