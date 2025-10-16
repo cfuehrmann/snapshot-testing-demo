@@ -1,1 +1,10 @@
-﻿
+﻿{
+  PersonId: Guid_1,
+  IsValid: false,
+  Status: Has Warnings,
+  Warnings: [
+    FirstName should start with uppercase letter
+  ],
+  ValidatedAt: DateTime_1,
+  ValidationId: Guid_2
+}

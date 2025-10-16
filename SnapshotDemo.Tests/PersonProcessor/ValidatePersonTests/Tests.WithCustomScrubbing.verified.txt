@@ -1,1 +1,23 @@
-﻿
+﻿{
+  input: {
+    FirstName: Bob,
+    LastName: Wilson,
+    Address: {
+      Street: 321 Pine Road,
+      City: Seattle,
+      PostalCode: 98101,
+      AddressId: Guid_1,
+      CreatedAt: {Scrubbed}
+    },
+    PersonId: Guid_2,
+    DateOfBirth: DateTime_1,
+    LastUpdated: {Scrubbed}
+  },
+  output: {
+    PersonId: Guid_2,
+    IsValid: true,
+    Status: Valid,
+    ValidatedAt: {Scrubbed},
+    ValidationId: {Scrubbed}
+  }
+}
