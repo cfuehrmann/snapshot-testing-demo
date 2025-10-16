@@ -3,15 +3,12 @@
     FirstName: alice,
     LastName: JOHNSON,
     Address: {
-      Street: 789 Oak Avenue,
       City: chicago,
-      PostalCode: 60601,
       AddressId: Guid_1,
       CreatedAt: DateTime_1
     },
     PersonId: Guid_2,
-    DateOfBirth: DateTime_2,
-    LastUpdated: DateTime_3
+    LastUpdated: DateTime_2
   },
   output: {
     PersonId: Guid_2,
@@ -22,7 +19,7 @@
     ],
     Metadata: {
       ValidationId: Guid_3,
-      ValidatedAt: DateTime_4,
+      ValidatedAt: DateTime_3,
       ValidatorVersion: 1.0
     }
   }
