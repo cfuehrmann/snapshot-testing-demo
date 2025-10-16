@@ -1,6 +1,3 @@
-using NUnit.Framework;
-using SnapshotDemo;
-
 namespace SnapshotDemo.Tests.PersonProcessor.ValidatePersonTests;
 
 [TestFixture]
@@ -94,7 +91,7 @@ public class Tests
 
         // Assert
 
-        // This assert is superflous because of how the PersonId
+        // This assert is superfluous because of how the PersonId
         // in input and output is scrubbed!
         Assert.That(output.PersonId, Is.EqualTo(inputPersonId), 
             "Person ID should be preserved from input to output");
