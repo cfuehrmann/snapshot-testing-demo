@@ -20,7 +20,10 @@
     Warnings: [
       FirstName should start with uppercase letter
     ],
-    ValidatedAt: DateTime_4,
-    ValidationId: Guid_3
+    Metadata: {
+      ValidationId: Guid_3,
+      ValidatedAt: DateTime_4,
+      ValidatorVersion: 1.0
+    }
   }
 }

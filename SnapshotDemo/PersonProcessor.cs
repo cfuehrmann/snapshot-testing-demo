@@ -24,13 +24,18 @@ public class PersonProcessor
         var isValid = warnings.Count == 0;
         var status = isValid ? "Valid" : "Has Warnings";
         
+        var metadata = new ValidationMetadata(
+            ValidationId: Guid.NewGuid(),
+            ValidatedAt: DateTime.UtcNow,
+            ValidatorVersion: "1.0"
+        );
+        
         return new ValidationResult(
             PersonId: inputPerson.PersonId,
             IsValid: isValid,
             Status: status,
             Warnings: warnings,
-            ValidatedAt: DateTime.UtcNow,
-            ValidationId: Guid.NewGuid()
+            Metadata: metadata
         );
     }
 }

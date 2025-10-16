@@ -5,6 +5,9 @@
   Warnings: [
     FirstName should start with uppercase letter
   ],
-  ValidatedAt: DateTime_1,
-  ValidationId: Guid_2
+  Metadata: {
+    ValidationId: Guid_2,
+    ValidatedAt: DateTime_1,
+    ValidatorVersion: 1.0
+  }
 }
