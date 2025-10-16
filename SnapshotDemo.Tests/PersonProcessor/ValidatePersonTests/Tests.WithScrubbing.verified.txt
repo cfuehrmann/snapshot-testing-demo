@@ -1,11 +1,1 @@
-﻿{
-  PersonId: Guid_1,
-  IsValid: false,
-  Status: Has Warnings,
-  Warnings: [
-    FirstName should start with uppercase letter,
-    LastName should start with uppercase letter
-  ],
-  ValidatedAt: {Scrubbed},
-  ValidationId: {Scrubbed}
-}
+﻿

@@ -20,7 +20,7 @@
     Warnings: [
       FirstName should start with uppercase letter
     ],
-    ValidatedAt: {Scrubbed},
-    ValidationId: {Scrubbed}
+    ValidatedAt: DateTime_3,
+    ValidationId: Guid_3
   }
 }

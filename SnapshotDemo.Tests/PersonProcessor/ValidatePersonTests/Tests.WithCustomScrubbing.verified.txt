@@ -17,7 +17,7 @@
     PersonId: Guid_2,
     IsValid: true,
     Status: Valid,
-    ValidatedAt: {Scrubbed},
-    ValidationId: {Scrubbed}
+    ValidatedAt: DateTime_2,
+    ValidationId: Guid_3
   }
 }

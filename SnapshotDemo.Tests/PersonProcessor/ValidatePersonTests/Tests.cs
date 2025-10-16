@@ -40,7 +40,7 @@ public class Tests
     }
 
     [Test]
-    public Task WithScrubbing()
+    public Task ExplicitScrubbing()
     {
         var address = new Address(
             Street: "456 elm street",
@@ -62,8 +62,7 @@ public class Tests
         var output = _processor.ValidatePerson(person);
 
         return Verify(output)
-            .ScrubMember<ValidationResult>(x => x.ValidatedAt)
-            .ScrubMember<ValidationResult>(x => x.ValidationId);
+            .ScrubMember<ValidationResult>(x => x.Status);
     }
 
     [Test]
@@ -95,9 +94,7 @@ public class Tests
             "Person ID should be preserved from input to output");
 
         return Verify(new { input, output })
-            .ScrubMember<Person>(x => x.LastUpdated)
-            .ScrubMember<ValidationResult>(x => x.ValidatedAt)
-            .ScrubMember<ValidationResult>(x => x.ValidationId);
+            .ScrubMember<Person>(x => x.LastUpdated);
     }
 
     [Test]
@@ -124,8 +121,6 @@ public class Tests
 
         return Verify(new { input, output })
             .ScrubMember<Person>(x => x.LastUpdated)
-            .ScrubMember<Address>(x => x.CreatedAt)
-            .ScrubMember<ValidationResult>(x => x.ValidatedAt)
-            .ScrubMember<ValidationResult>(x => x.ValidationId);
+            .ScrubMember<Address>(x => x.CreatedAt);
     }
 }
