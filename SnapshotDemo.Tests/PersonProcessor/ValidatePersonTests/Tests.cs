@@ -93,8 +93,7 @@ public class Tests
         Assert.That(output.PersonId, Is.EqualTo(inputPersonId), 
             "Person ID should be preserved from input to output");
 
-        return Verify(new { input, output })
-            .ScrubMember<Person>(x => x.LastUpdated);
+        return Verify(new { input, output });
     }
 
     [Test]

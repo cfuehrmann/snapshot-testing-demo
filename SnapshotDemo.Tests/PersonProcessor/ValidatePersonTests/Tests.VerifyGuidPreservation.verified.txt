@@ -11,7 +11,7 @@
     },
     PersonId: Guid_2,
     DateOfBirth: DateTime_2,
-    LastUpdated: {Scrubbed}
+    LastUpdated: DateTime_3
   },
   output: {
     PersonId: Guid_2,
@@ -20,7 +20,7 @@
     Warnings: [
       FirstName should start with uppercase letter
     ],
-    ValidatedAt: DateTime_3,
+    ValidatedAt: DateTime_4,
     ValidationId: Guid_3
   }
 }
